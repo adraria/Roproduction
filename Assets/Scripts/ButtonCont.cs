@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonCont : MonoBehaviour {
 
     [Tooltip("Only used for testing")]
-    [SerializeField] private int mouseButton = 0;
+    //[SerializeField] private int mouseButton = 0;
 
     [SerializeField] private GameObject Button;
     [SerializeField] private AnimationCurve pushCurve;
@@ -80,12 +80,12 @@ public class ButtonCont : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         
-        ///*
+        /*
         // used for testing of button press
         if(Input.GetMouseButtonDown(mouseButton)) {
             Press();
         }
-        //*/
+        */
 
         // Updates the button position if it is going out or in
         if(state == "going in") {

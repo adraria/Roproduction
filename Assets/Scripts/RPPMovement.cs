@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class RPPMovement : MonoBehaviour
 {
-
+    [SerializeField] private bool isFirstRobot = false;
     public float timeCreated;
 
     // Start is called before the first frame update
     void Start()
     {
-        timeCreated = Time.time;
+        if (isFirstRobot) {
+            timeCreated = Time.time - 1;
+        } else {
+            timeCreated = Time.time;
+        }
     }
 
     // Update is called once per frame
@@ -18,6 +22,10 @@ public class RPPMovement : MonoBehaviour
     {
         if (transform.position.y < 16.9) {
             transform.position = transform.position + new Vector3(0f, 20 * Time.deltaTime, 0f);
+        }
+        //print(Time.time);
+        if (Time.time - timeCreated > 11 - 0.35247) {
+            transform.position = transform.position + new Vector3(0f, -20 * Time.deltaTime, 0f);
         }
         if (Time.time - timeCreated > 20) {
             Destroy(this.gameObject);

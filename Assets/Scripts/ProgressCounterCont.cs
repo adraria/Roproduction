@@ -19,6 +19,9 @@ public class ProgressCounterCont : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        total = GlobalVars.instance.numChallenges;
+        completed = GlobalVars.instance.completedChallenges;
+
         totalCont.transform.localPosition = initialLocation + new Vector3(numberStep *((int) Mathf.Log10(total)), 0f,0f);
         totalCont.SetNumber((float) total);
         progressCont.SetNumber((float) completed);

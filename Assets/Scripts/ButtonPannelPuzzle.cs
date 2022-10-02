@@ -13,11 +13,15 @@ public class ButtonPannelPuzzle : MonoBehaviour
     [SerializeField] private Material completedMat;
 
     private List<Material> correctMats;
+    private bool completionActionComplete = false;
+    private float timeCreated;
     
 
     // Start is called before the first frame update
     // Sets up the puzzle
     void Start() {
+        timeCreated = Time.time;
+
         correctMats = new List<Material>();
         List<ButtonCont> buttonCopy = new List<ButtonCont>(buttonList);
         // Each loop adds a hint color and removes the 
@@ -60,10 +64,18 @@ public class ButtonPannelPuzzle : MonoBehaviour
         }
 
         // if completed turn off colors and interactability
-        if (completed) {
+        if (completed && !completionActionComplete) {
+            completionActionComplete = true;
+            if (Mathf.Floor(Time.time / 10) == Mathf.Floor(timeCreated / 10)) {
+                GlobalVars.instance.completedChallenges += 1;
+            }
             foreach(ButtonCont bc in buttonList) {
                 bc.TurnOffButton(completedMat);
             }
+        }
+
+        if (Time.time - timeCreated > 25) {
+            Destroy(this.gameObject);
         }
     }
 }

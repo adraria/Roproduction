@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Pedestal
   - Robot
+  - Valve
+  - Button
   layers:
   - Default
   - TransparentFX
