@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class ButtonCont : MonoBehaviour {
 
+    [Tooltip("Only used for testing")]
+    [SerializeField] private int mouseButton = 0;
+
     [SerializeField] private GameObject Button;
     [SerializeField] private AnimationCurve pushCurve;
     [SerializeField] private float pushDistance = 1f;
     [SerializeField] private float pushTime = 0.5f;
-    
+
+    private bool interactable = true;
+
+    private bool correctState = true;
+
     private float animStart;
     private Vector3 startPos;
-    
     
     // state the button is in
     // possible states: "out" "in" "going in" "going out"
@@ -21,11 +27,34 @@ public class ButtonCont : MonoBehaviour {
         return state;
     }
 
+    // returns true if the button is pushed in false if it is not
     public bool PushedIn() {
         return state == "in" || state == "going in";
     }
 
+    // Returns true if the button is in the correct state
+    public bool IsCorrect() {
+        return PushedIn() == correctState;
+    }
+
+    // sets the material of the button and turns it off from being interactable
+    public void TurnOffButton(Material completedMat) {
+        Button.GetComponent<Renderer>().material = completedMat;
+        interactable = false;
+    }
+
+    // Sets the color and the correct state the button is supposed to be int
+    public void SetColor(Material newMat, bool neededState) {
+        correctState = neededState;
+        Button.GetComponent<Renderer>().material = newMat;
+    }
+
+    // Changes the state and time to start/change the button animation
     public void Press() {
+        // if set to off do not change the state
+        if(!interactable) {
+            return;
+        }
         if(state == "out") {
             animStart = Time.time;
             state = "going in";
@@ -50,10 +79,14 @@ public class ButtonCont : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(Input.GetMouseButtonDown(0)) {
+        
+        ///*
+        // used for testing of button press
+        if(Input.GetMouseButtonDown(mouseButton)) {
             Press();
         }
-        //print(state);
+        //*/
+
         // Updates the button position if it is going out or in
         if(state == "going in") {
             // if the time is up set the the button to its pushed in state
