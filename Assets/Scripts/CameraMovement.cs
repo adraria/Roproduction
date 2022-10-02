@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private GameObject room0, room1, room2, room3;
     [SerializeField] private Material mat1, mat2;
     [SerializeField] private GameObject PARprefab;
-    [SerializeField] public static GameObject cube;
+    [SerializeField] public GameObject cube;
     private float nextLandmark = 10f;
     private GameObject roomLeft, roomOfFocus, roomRight, roomFR;
     private float w = 5f;
@@ -56,6 +56,8 @@ public class CameraMovement : MonoBehaviour
         Ray pointRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         float par = -pointRay.origin.y / pointRay.direction.y;
         cube.transform.position = new Vector3(pointRay.origin.x + pointRay.direction.x * par, 0, pointRay.origin.z + pointRay.direction.z * par);
+        GlobalVars.instance.groundx = pointRay.origin.x + pointRay.direction.x * par;
+        GlobalVars.instance.groundz = pointRay.origin.z + pointRay.direction.z * par;
         transform.position = new Vector3(f(t), transform.position.y, transform.position.z);
         if (t > nextLandmark - 1f && !created) {
             GameObject newbot = Instantiate(PARprefab, new Vector3(-10 * nextLandmark - 18.43574f, -10f, -22.54915f), Quaternion.identity);
