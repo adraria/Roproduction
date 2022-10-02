@@ -29,6 +29,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3945168034149851481}
+  - {fileID: 827403590419877289}
   - {fileID: 5832915209803256990}
   - {fileID: 59616899364958015}
   m_Father: {fileID: 0}
@@ -47,11 +49,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   digitList:
+  - {fileID: 1998772007302118226}
+  - {fileID: 2740047636216862626}
   - {fileID: 9047644355670380181}
   - {fileID: 3291797768666150196}
-  digits: 2
+  digits: 4
   decimals: 0
---- !u!1001 &1048081760240873289
+--- !u!1001 &370353592716430815
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -62,6 +66,93 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107708370914908779, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_Name
+      value: 'DigitController 2 '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cbff21e61b3716a4f9010e3c5ea5c042, type: 3}
+--- !u!4 &827403590419877289 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+    type: 3}
+  m_PrefabInstance: {fileID: 370353592716430815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2740047636216862626 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2532527601771993725, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+    type: 3}
+  m_PrefabInstance: {fileID: 370353592716430815}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7dde40c463330f4887a8e29dab8d8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &1048081760240873289
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4098559201521126407}
+    m_Modifications:
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
         type: 3}
@@ -116,7 +207,7 @@ PrefabInstance:
     - target: {fileID: 4107708370914908779, guid: cbff21e61b3716a4f9010e3c5ea5c042,
         type: 3}
       propertyPath: m_Name
-      value: DigitController 2
+      value: DigitController 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbff21e61b3716a4f9010e3c5ea5c042, type: 3}
@@ -138,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7dde40c463330f4887a8e29dab8d8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &6821520726561969384
+--- !u!1001 &4078089604211761455
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -149,6 +240,93 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107708370914908779, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_Name
+      value: 'DigitController 1 '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cbff21e61b3716a4f9010e3c5ea5c042, type: 3}
+--- !u!114 &1998772007302118226 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2532527601771993725, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+    type: 3}
+  m_PrefabInstance: {fileID: 4078089604211761455}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7dde40c463330f4887a8e29dab8d8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &3945168034149851481 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+    type: 3}
+  m_PrefabInstance: {fileID: 4078089604211761455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6821520726561969384
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4098559201521126407}
+    m_Modifications:
+    - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1033652598654828662, guid: cbff21e61b3716a4f9010e3c5ea5c042,
         type: 3}
@@ -203,7 +381,7 @@ PrefabInstance:
     - target: {fileID: 4107708370914908779, guid: cbff21e61b3716a4f9010e3c5ea5c042,
         type: 3}
       propertyPath: m_Name
-      value: DigitController 1
+      value: DigitController 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbff21e61b3716a4f9010e3c5ea5c042, type: 3}

@@ -19,11 +19,20 @@ public class DigitController : MonoBehaviour {
 
     // Sets the digit to be displayed returns false if not 0-9
     public bool SetDigit(int newDigit) {
-        if(newDigit < 0 || newDigit > 9) {
+        if(newDigit < -1 || newDigit > 9) {
             return false;
         } else {
             digit = newDigit;
             switch(digit) {
+                case -1:
+                    segmentA.SetActive(false);
+                    segmentB.SetActive(false);
+                    segmentC.SetActive(false);
+                    segmentD.SetActive(false);
+                    segmentE.SetActive(false);
+                    segmentF.SetActive(false);
+                    segmentG.SetActive(false);
+                    break;
                 case 0:
                     segmentA.SetActive(true);
                     segmentB.SetActive(true);
