@@ -12,6 +12,15 @@ public class GlobalVars
     public int lives = 5;
     public float ratSymbolAngVel = 0f;
     public int roomNumber = 1;
+    public int maxChallenges = 1;
+    public int tasksDone = 0;
+    private int countLastChecked = 0;
+
+    public static bool checkCounter() {
+        bool increased = (instance.completedChallenges > instance.countLastChecked);
+        instance.countLastChecked = instance.completedChallenges;
+        return increased;
+    }
 
     public static void reset() {
         instance = new GlobalVars();

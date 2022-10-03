@@ -8,6 +8,8 @@ TagManager:
   - Robot
   - Valve
   - Button
+  - Rat
+  - Lever
   layers:
   - Default
   - TransparentFX
