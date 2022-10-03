@@ -292,6 +292,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonPannel
       objectReference: {fileID: 0}
+    - target: {fileID: 7307109073415605764, guid: 929590b55d61fc94faa05f64dbec94cd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41cf0435ef83e6943a57d4708de66c13, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 929590b55d61fc94faa05f64dbec94cd, type: 3}
 --- !u!4 &1657133608681673392 stripped

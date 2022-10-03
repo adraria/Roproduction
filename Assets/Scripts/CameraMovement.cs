@@ -11,7 +11,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private GameObject PARprefab;
     [SerializeField] private GameObject gameOverScreen, startScreen;
     [SerializeField] private AudioSource startmusic, gamemusic, gamemusicloop, lossmusic, ding;
-    [SerializeField] private GameObject esctext;
+    [SerializeField] private GameObject convcomp1, convcomp2;
     private float nextLandmark = 10f;
     private GameObject roomLeft, roomOfFocus, roomRight, roomFR;
     private float w = 5f;
@@ -81,7 +81,6 @@ public class CameraMovement : MonoBehaviour
             } else {
                 startmusic.Stop();
                 gamemusic.Play();
-                esctext.SetActive(false);
                 startScreen.SetActive(false);
                 Time.timeScale = 1;
             }
@@ -139,6 +138,12 @@ public class CameraMovement : MonoBehaviour
             roomOfFocus.GetComponent<Renderer>().material = mat2;
             roomLeft.GetComponent<Renderer>().material = mat1;
             GlobalVars.instance.roomNumber += 1;
+            if (nextLandmark % 20 == 0) {
+                convcomp1.transform.position = convcomp1.transform.position + new Vector3(-400f, 0f, 0f);
+                GameObject temp1 = convcomp1;
+                convcomp1 = convcomp2;
+                convcomp2 = temp1;
+            }
             created = false;
             if (GlobalVars.instance.completedChallenges < GlobalVars.instance.numChallenges) {
                 GlobalVars.instance.lives -= (GlobalVars.instance.numChallenges - GlobalVars.instance.completedChallenges);
@@ -159,7 +164,6 @@ public class CameraMovement : MonoBehaviour
             gamemusicloop.Stop();
             lossmusic.Play();
             Time.timeScale = 0;
-            esctext.SetActive(true);
             gameOverScreen.SetActive(true);
             endScreen = true;
         }
