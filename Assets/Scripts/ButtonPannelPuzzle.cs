@@ -21,8 +21,8 @@ public class ButtonPannelPuzzle : MonoBehaviour
     // Sets up the puzzle
     void Start() {
         timeCreated = Time.time;
-
         correctMats = new List<Material>();
+
         List<ButtonCont> buttonCopy = new List<ButtonCont>(buttonList);
         // Each loop adds a hint color and removes the 
         for(int i = 0; i < hintList.Count; i++) {
@@ -71,6 +71,9 @@ public class ButtonPannelPuzzle : MonoBehaviour
             }
             foreach(ButtonCont bc in buttonList) {
                 bc.TurnOffButton(completedMat);
+            }
+            foreach(GameObject obj in hintList) {
+                obj.GetComponent<Renderer>().material = completedMat;
             }
         }
 
