@@ -48,11 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dcea2f3dd2ffc240af22365b3c92758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultValue: 0
   digitList:
   - {fileID: 9047644355670380181}
   - {fileID: 3291797768666150196}
   digits: 2
   decimals: 1
+  showAllZeros: 0
 --- !u!114 &5439855978236347656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +180,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 92283842a777d2e4c8f6761225d974e3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.131
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92283842a777d2e4c8f6761225d974e3,
         type: 3}
