@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private GameObject room0, room1, room2, room3;
     [SerializeField] private Material mat1, mat2;
     [SerializeField] private GameObject PARprefab;
-    [SerializeField] private GameObject livesDisplay;
-    [SerializeField] private GameObject leftPanel;
     private float nextLandmark = 10f;
     private GameObject roomLeft, roomOfFocus, roomRight, roomFR;
     private float w = 5f;
     private float startTime;
     private bool created = false;
+    private bool endScreen = false;
 
     // Start is called before the first frame update
     void Start()
@@ -59,10 +59,15 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         float t = Time.time - startTime;
-        if (Input.anyKey) {
-            Time.timeScale = 1;
+        if (Input.anyKey && Time.timeScale == 0) {
+            if (endScreen) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                GlobalVars.reset();
+                endScreen = false;
+            } else {
+                Time.timeScale = 1;
+            }
         }
-        ((NumberController) (livesDisplay.GetComponent<MonoBehaviour>())).SetNumber(GlobalVars.instance.lives);
         Ray pointRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(pointRay, out RaycastHit hit, 100)) {
             if (Input.GetMouseButtonDown(0) && Time.timeScale != 0) {
@@ -84,7 +89,6 @@ public class CameraMovement : MonoBehaviour
             created = true;
         }
         if (t > nextLandmark) {
-            leftPanel.SetActive(true);
             roomLeft.transform.position = roomLeft.transform.position + new Vector3(-400f, 0f, 0f);
             GameObject temp = roomLeft;
             roomLeft = roomOfFocus;
@@ -93,6 +97,7 @@ public class CameraMovement : MonoBehaviour
             roomFR = temp;
             roomOfFocus.GetComponent<Renderer>().material = mat2;
             roomLeft.GetComponent<Renderer>().material = mat1;
+            GlobalVars.instance.roomNumber += 1;
             created = false;
             if (GlobalVars.instance.completedChallenges < GlobalVars.instance.numChallenges) {
                 GlobalVars.instance.lives -= (GlobalVars.instance.numChallenges - GlobalVars.instance.completedChallenges);
@@ -103,6 +108,10 @@ public class CameraMovement : MonoBehaviour
             ((RoomBeh) roomOfFocus.GetComponent<MonoBehaviour>()).spawnNewChallenges(GlobalVars.instance.numChallenges);
             GlobalVars.instance.completedChallenges = 0;
             nextLandmark += 10;
+        }
+        if (GlobalVars.instance.lives <= 0 || GlobalVars.instance.numChallenges <= 0) {
+            Time.timeScale = 0;
+            endScreen = true;
         }
     }
 }

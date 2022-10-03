@@ -20,14 +20,13 @@ public class RPPMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < 16.9) {
+        if (transform.position.y < 16.9 && Time.time - timeCreated < 5) {
             transform.position = transform.position + new Vector3(0f, 20 * Time.deltaTime, 0f);
         }
-        //print(Time.time);
         if (Time.time - timeCreated > 11 - 0.35247) {
             transform.position = transform.position + new Vector3(0f, -20 * Time.deltaTime, 0f);
         }
-        if (Time.time - timeCreated > 20) {
+        if (Time.time - timeCreated > 12) {
             Destroy(this.gameObject);
         }
     }

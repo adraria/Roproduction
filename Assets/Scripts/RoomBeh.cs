@@ -24,7 +24,7 @@ public class RoomBeh : MonoBehaviour
                 while (!done) {
                     valvex = Random.Range(-36f, 36f);
                     valvez = Random.Range(-18f, 20f);
-                    if (valvex * valvex + valvez * valvez > 16 * 16 && (valvex < -10 || valvex > 10 || valvez > 0) && valvez > -16 && (valvex < 32 || valvez > -11)) {
+                    if (valvex * valvex + valvez * valvez > 16 * 16 && (valvex < -10 || valvex > 10 || valvez > 0) && valvez > -16 && (valvex < 31 || valvez > -10)) {
                         done = true;
                     }
                 }
@@ -41,7 +41,7 @@ public class RoomBeh : MonoBehaviour
                             done = true;
                         }
                     }
-                    Instantiate(buttongameprefab, transform.position + new Vector3((buttonSlot % 2) * 50f - 25f, 0f + 12f * (buttonSlot / 2), -20f), Quaternion.identity).transform.SetParent(this.transform);
+                    Instantiate(buttongameprefab, transform.position + new Vector3((buttonSlot % 2) * 55f - 27.5f, 0f + 12f * (buttonSlot / 2), -20f), Quaternion.identity).transform.SetParent(this.transform);
                     i++;
                     numButtonGames++;
                 }

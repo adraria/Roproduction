@@ -9,6 +9,11 @@ public class GlobalVars
     public float groundz = 0f;
     public int numChallenges = 1;
     public int completedChallenges = 0;
-    public int lives = 50;
+    public int lives = 5;
     public float ratSymbolAngVel = 0f;
+    public int roomNumber = 1;
+
+    public static void reset() {
+        instance = new GlobalVars();
+    }
 }
